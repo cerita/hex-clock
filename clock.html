@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<meta charset="utf-8">
+<title>Cerita | Hex Clock</title>
+
+
+</head>
+<style>
+html body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#clock {
+	color: white;
+	font-family: 'Lato', Helvetiva, Arial, sans-serif;
+	text-align: center;
+	font-size: 5em;
+   letter-spacing: .25em;
+  font-weight: 100;
+}
+</style>
+
+
+<body>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+
+<div id="clock"></div>
+
+
+</body>
+
+<script>
+function hexClock() {
+  var time = new Date();
+  
+  var h = time.getHours();
+  var m = time.getMinutes();
+  var s = time.getSeconds();
+  
+  if (h <= 9) { h = "0" + h};
+  if (m <= 9) { m = "0" + m};
+  if (s <= 9) { s = "0" + s};
+  
+  
+  var clock = "#" + h + ":" + m + ":" + s;
+  var bg = "#" + h + m + s;
+  
+  $('body').css("background-color", bg);
+  
+  document.getElementById('clock').innerHTML = clock;
+  setInterval(hexClock, 1000);
+};
+
+hexClock();
+</script>
+</html>
