@@ -1,0 +1,23 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+html, body {
+  height:100%;
+}
+
+#clock {
+  height: 1.3em;
+
+  position: relative;
+  top: 50%;
+  text-align:center;
+
+	color: white;
+	font-family: 'Lato', Helvetiva, Arial, sans-serif;
+
+	font-size: 5em;
+  letter-spacing: .25em;
+  font-weight: 300;
+}
