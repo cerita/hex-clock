@@ -1,22 +1,27 @@
 function hexClock() {
-  var time = new Date();
+    var time, h, m, s, clock, bg;
+    
+    time = new Date();
+    h = time.getHours();
+    m = time.getMinutes();
+    s = time.getSeconds();
 
-  var h = time.getHours();
-  var m = time.getMinutes();
-  var s = time.getSeconds();
+    if (h <= 9) {h = "0" + h; }
+    if (m <= 9) {
+        m = "0" + m;
+    }
+    if (s <= 9) {
+        s = "0" + s;
+    }
 
-  if (h <= 9) { h = "0" + h};
-  if (m <= 9) { m = "0" + m};
-  if (s <= 9) { s = "0" + s};
 
+    clock = "#" + h + ":" + m + ":" + s;
+    bg = "#" + h + m + s;
 
-  var clock = "#" + h + ":" + m + ":" + s;
-  var bg = "#" + h + m + s;
+    
+    $('body').css('background-color', bg);
+    $('#clock').html(clock);
+    setInterval(hexClock, 1000);
+}
 
-  $('body').css("background-color", bg);
-
-  document.getElementById('clock').innerHTML = clock;
-  setInterval(hexClock, 1000);
-};
-
-hexClock();
+window.onload = hexClock();
