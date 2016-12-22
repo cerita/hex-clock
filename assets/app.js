@@ -21,7 +21,7 @@ function hexClock() {
     
     $('body').css('background-color', bg);
     $('#clock').html(clock);
-    setInterval(hexClock, 1000);
+
 }
 
-window.onload = hexClock();
+window.onload =     setInterval(hexClock, 1000);
